@@ -1,0 +1,20 @@
+const AWS = require('aws-sdk');
+const SNS = new AWS.SNS({ apiVersion: '2010-03-31' });
+const PHONE_NUMBER = '+521??????????'; // change the ? to your phone number
+
+exports.handler = (event, context, callback) => {
+
+    // log to console
+    console.log('Initializing lambda function');
+    console.log(`Sending SMS to ${PHONE_NUMBER}`);
+    
+    // build function logic to send message
+    const params = {
+        PhoneNumber: PHONE_NUMBER,
+        Message: 'Hola desde Lambda y SNS',
+    };
+    
+    // send message
+    SNS.publish(params, callback);
+    
+};
