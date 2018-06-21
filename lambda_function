@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const SNS = new AWS.SNS({ apiVersion: '2010-03-31' });
-const PHONE_NUMBER = '+521??????????'; // change the ? to your phone number
+const PHONE_NUMBER = '+521??????????'; // change the ? to your mexican phone number
 
 exports.handler = (event, context, callback) => {
 
